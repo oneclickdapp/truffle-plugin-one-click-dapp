@@ -2,11 +2,6 @@
 
 Create a smart contract interface instantly from a Truffle folder
 
-// tip: start a new truffle project using
-// truffle init
-
-Within your truffle project:
-
 ### Install
 
 Within your Truffle project
@@ -45,3 +40,9 @@ Access ContractA at:
 
     https://oneclickdapp.com/front-cliff
 ```
+
+### Created with <3 for Trufflecon 2019 Hackathon
+
+- [Ethan Wessel](twitter.com/ejwessel)
+
+- [Patrick Gallagher](twitter.com/pi0neerpat)
