@@ -4,7 +4,7 @@ var path = require('path');
 
 const ONE_CLICK_DAPP_URL = 'https://oneclickdapp.com';
 
-module.exports = async config => {
+module.exports = config => {
   // console.log(config.contracts_build_directory);
   const contractBuildDir = path.join(
     config._values.working_directory,
@@ -17,28 +17,30 @@ module.exports = async config => {
   let results = [];
   filenames.forEach(filename => {
     const filePath = path.join(contractBuildDir, filename);
-    const r = parseState(filePath);
-    results = results.concat(r);
-    results.forEach(result => {
-      axios
-        .post(`${ONE_CLICK_DAPP_URL}/contracts`, {
-          contractName: result.contractName,
-          contractAddress: result.address,
-          abi: result.abi,
-          network: result.networkId,
-          creatorAddress: '0x'
-        })
-        .then(res => {
-          console.log(
-            `\n\nAccess ${
-              result.contractName
-            } at:\n\n    ${ONE_CLICK_DAPP_URL}/${res.data.mnemonic}`
-          );
-        })
-        .catch(err => {
-          console.log(err.message);
-        });
-    });
+    parseState(filePath);
+//    results = results.concat(r);
+//    results.forEach(result => {
+//      console.log(result)
+//      console.log("")
+//      axios
+//        .post(`${ONE_CLICK_DAPP_URL}/contracts`, {
+//          contractName: result.contractName,
+//          contractAddress: result.address,
+//          abi: result.abi,
+//          network: result.networkId,
+//          creatorAddress: '0x'
+//        })
+//        .then(res => {
+//          console.log(
+//            `\n\nAccess ${
+//              result.contractName
+//            } at:\n\n    ${ONE_CLICK_DAPP_URL}/${res.data.mnemonic}`
+//          );
+//        })
+//        .catch(err => {
+//          console.log(err.message);
+//        });
+//    });
   });
 };
 
@@ -64,6 +66,7 @@ function parseState(dataSource) {
     return;
   }
 
+  const abi = jsonParsed.abi;
   const contractName = jsonParsed.contractName;
   const networkIds = Object.keys(jsonParsed.networks);
 
@@ -77,14 +80,34 @@ function parseState(dataSource) {
     const deployment = jsonParsed.networks[networkId];
     const address = deployment.address;
 
-    const result = {
-      contractName: contractName,
-      networkId: networkId,
-      address: address
-    };
+//    const result = {
+//      contractName: contractName,
+//      networkId: networkId,
+//      address: address,
+//      abi: abi
+//    };
 
-    results.push(result);
+    axios
+      .post(`${ONE_CLICK_DAPP_URL}/contracts`, {
+        contractName: contractName,
+        contractAddress: address,
+        abi: abi,
+        network: networkId,
+        creatorAddress: '0x'
+      })
+      .then(res => {
+        console.log(
+          `\n\nAccess ${
+            contractName
+          } at:\n\n    ${ONE_CLICK_DAPP_URL}/${res.data.mnemonic}`
+        );
+      })
+      .catch(err => {
+        console.log(err.message);
+      });
+
+    //results.push(result);
   });
 
-  return results;
+  //return results;
 }
