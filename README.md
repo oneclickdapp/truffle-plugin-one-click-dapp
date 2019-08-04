@@ -1,23 +1,23 @@
-## Truffle Plugin - One Click Dapp
+## :chocolate_bar: :one: :collision: Truffle One Click Plugin
 
-Create a smart contract interface instantly from a Truffle folder
+**Instantly create an interface for your smart contract directly from Truffle**
+
+:trophy: 3rd Place Prize at _Trufflecon 2019 Hackathon_
 
 ### Install
 
-Within your Truffle project
+Inside your Truffle project
 
-`npm init -y`
+`npm install --save-dev truffle-one-click-plugin`
 
-Then install the plugin using:
+Next, add the plugin to `truffle-config.js` like this:
 
-`npm install --save-dev git+https://github.com/pi0neerpat/truffle-plugin-one-click-dapp`
+```js
+module.exports = {
+  /* ... rest of truffle-config */
 
-Add the following to your truffle-config.js
-
-```
-  plugins: [
-    "oneclick"
-  ]
+  plugins: ['oneclick']
+};
 ```
 
 ### Usage
@@ -26,7 +26,7 @@ To use the plugin
 
 `truffle run oneclick`
 
-> Note: Be sure you've migrated your contracts using Ganache, testnet, mainnet, etc. `truffle migrate`
+> _Note: Be sure you've migrated your contracts using Ganache, testnet, mainnet, etc. `truffle migrate`_
 
 For each deployed contract you will receive an output like this:
 
@@ -41,7 +41,7 @@ Access ContractA at:
     https://oneclickdapp.com/front-cliff
 ```
 
-### Created with <3 for Trufflecon 2019 Hackathon
+#### Created in 1 hour :hourglass_flowing_sand: at Trufflecon 2019 by:
 
 - [Ethan Wessel](http://twitter.com/ejwessel)
 
