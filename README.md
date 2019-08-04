@@ -43,6 +43,6 @@ Access ContractA at:
 
 ### Created with <3 for Trufflecon 2019 Hackathon
 
-- [Ethan Wessel](twitter.com/ejwessel)
+- [Ethan Wessel](http://twitter.com/ejwessel)
 
-- [Patrick Gallagher](twitter.com/pi0neerpat)
+- [Patrick Gallagher](http://twitter.com/pi0neerpat)
