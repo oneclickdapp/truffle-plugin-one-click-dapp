@@ -2,6 +2,8 @@ var fs = require('fs'); // include file system module
 const axios = require('axios');
 var path = require('path');
 
+const ONE_CLICK_DAPP_URL = 'https://oneclickdapp.com';
+
 module.exports = async config => {
   // console.log(config.contracts_build_directory);
   const contractBuildDir = path.join(
@@ -17,7 +19,26 @@ module.exports = async config => {
     const filePath = path.join(contractBuildDir, filename);
     const r = parseState(filePath);
     results = results.concat(r);
-    console.log(results);
+    results.forEach(result => {
+      axios
+        .post(`${ONE_CLICK_DAPP_URL}/contracts`, {
+          contractName: result.contractName,
+          contractAddress: result.address,
+          abi: result.abi,
+          network: result.networkId,
+          creatorAddress: '0x'
+        })
+        .then(res => {
+          console.log(
+            `\n\nAccess ${
+              result.contractName
+            } at:\n\n    ${ONE_CLICK_DAPP_URL}/${res.data.mnemonic}`
+          );
+        })
+        .catch(err => {
+          console.log(err.message);
+        });
+    });
   });
 };
 
