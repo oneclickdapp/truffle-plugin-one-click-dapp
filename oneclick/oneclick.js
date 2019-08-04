@@ -46,6 +46,12 @@ function parseState(dataSource) {
   const contractName = jsonParsed.contractName;
   const networkIds = Object.keys(jsonParsed.networks);
 
+  if (networkIds.length < 1) {
+    console.log(
+      `No network listed for ${contractName}.sol, Please run: truffle migrate`
+    );
+  }
+
   networkIds.forEach(networkId => {
     const deployment = jsonParsed.networks[networkId];
     const address = deployment.address;
