@@ -1,9 +1,11 @@
 const metadata = require('./package.json');
 
-const appRoot = process.env.PWD;
+const POST_INSTALL_PROMPT = `\n\n\nADDITIONAL STEP REQUIRED!\n\nPlease add ${
+  metadata.name
+} to the 'plugins' section of your truffle-config.js\n\nmodule.exports = {
+  /* ... rest of truffle-config */
 
-console.log('PWD: ' + appRoot);
+  plugins: ['oneclick']
+};\n\n`;
 
-console.log(
-  `Please add ${metadata.name} to the 'plugins' section of your truffle config!`
-);
+console.log(POST_INSTALL_PROMPT);

@@ -1,24 +1,22 @@
 {
-  "name": "truffle-one-click-plugin",
+  "name": "oneclick",
   "version": "1.0.0",
-  "description": "",
-  "main": "truffle-config.js",
-  "directories": {
-    "test": "test"
-  },
-  "dependencies": {
-    "oneclick": "file:oneclick",
-    "truffle-plugin-hello": "^1.0.1"
-  },
-  "devDependencies": {},
+  "description": "Create a persistent interface for your contract(s) instantly.",
+  "main": "oneclick.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node ./postinstall.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pi0neerpat/truffle-plugin-one-click-dapp.git"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "colors-cli": "^1.0.23"
+  }
 }
