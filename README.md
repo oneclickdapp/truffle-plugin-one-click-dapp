@@ -1,16 +1,16 @@
 ## :chocolate_bar: :one: :collision: Truffle One Click Plugin
 
-**Instantly create an interface for your smart contract directly from Truffle**
+**Create a persistent interface for your smart contract(s) instantly**
 
-:trophy: 3rd Place Prize at _Trufflecon 2019 Hackathon_
+:trophy: Winner 3rd Place at _Trufflecon 2019 Hackathon_
 
 ### Install
 
-Inside your Truffle project
+From within your Truffle project directory, run
 
-`npm install --save-dev truffle-one-click-plugin`
+`npm i oneclick`
 
-Next, add the plugin to `truffle-config.js` like this:
+Next, add the plugin to the `truffle-config.js` file, like this:
 
 ```js
 module.exports = {
@@ -21,8 +21,6 @@ module.exports = {
 ```
 
 ### Usage
-
-To use the plugin
 
 `truffle run oneclick`
 
@@ -41,7 +39,9 @@ Access ContractA at:
     https://oneclickdapp.com/front-cliff
 ```
 
-#### Created in 1 hour :hourglass_flowing_sand: at Trufflecon 2019 by:
+Note: You can use whatever network you like on your interface page. Just change the network in Metamask, and ignore the warning message!
+
+#### Created in 1 hour at Trufflecon 2019 by:
 
 - [Ethan Wessel](http://twitter.com/ejwessel)
 
