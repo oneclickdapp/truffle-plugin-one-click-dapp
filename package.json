@@ -1,6 +1,6 @@
 {
   "name": "oneclick",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Create a persistent interface for your smart contract(s) instantly.",
   "main": "oneclick.js",
   "scripts": {
@@ -11,8 +11,15 @@
     "type": "git",
     "url": "git+https://github.com/pi0neerpat/truffle-plugin-one-click-dapp.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Patrick Gallagher",
+  "license": "MIT",
+  "keywords": [
+    "smart contract",
+    "interface",
+    "abi",
+    "dapp",
+    "one click"
+  ],
   "dependencies": {
     "axios": "^0.19.0",
     "fs": "0.0.1-security",

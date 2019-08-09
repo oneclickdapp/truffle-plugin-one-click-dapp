@@ -1,8 +1,8 @@
 ## :chocolate_bar: :one: :collision: Truffle One Click Plugin
 
-**Create a persistent interface for your smart contract(s) instantly**
+**Create a persistent interface for any smart contract directly from a Truffle project**. :trophy: Winner 3rd Place at _Trufflecon 2019 Hackathon_
 
-:trophy: Winner 3rd Place at _Trufflecon 2019 Hackathon_
+<img width=300 alignText="center" src="./oneclickexample.png"/>
 
 ### Install
 
@@ -24,24 +24,22 @@ module.exports = {
 
 `truffle run oneclick`
 
-> _Note: Be sure you've migrated your contracts using Ganache, testnet, mainnet, etc. `truffle migrate`_
+> Note: Be sure you've migrated your contracts using Ganache, testnet, mainnet, etc. using `truffle migrate`
 
 For each deployed contract you will receive an output like this:
+I
 
 ```
-Access Migrations at:
+ShipA (8 functions) on network 4447 can be used at:
 
-    https://oneclickdapp.com/banjo-truck
-
-
-Access ContractA at:
-
-    https://oneclickdapp.com/front-cliff
+https://oneclickdapp.com/saga-north
 ```
 
-Note: You can use whatever network you like on your interface page. Just change the network in Metamask, and ignore the warning message!
+You can use whatever network you like on the oneclickdapp interface page. Just change the network in Metamask, and ignore the warning message!
 
-#### Created in 1 hour at Trufflecon 2019 by:
+If you have too many interfaces generated, then delete `/build` folder and run `truffle migrate` to reduce the number of different networks.
+
+#### Created with :chocolate_bar: at Trufflecon 2019:
 
 - [Ethan Wessel](http://twitter.com/ejwessel)
 
